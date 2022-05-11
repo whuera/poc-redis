@@ -2,7 +2,7 @@ package com.app.pocredis.dto;
 
 import java.io.Serializable;
 
-public class Student implements Serializable {
+public class User implements Serializable {
     private String firstname;
     private String lastname;
     private String emailAddress;

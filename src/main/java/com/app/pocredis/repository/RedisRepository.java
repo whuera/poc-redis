@@ -1,13 +1,13 @@
 package com.app.pocredis.repository;
 
-import com.app.pocredis.dto.Student;
+import com.app.pocredis.dto.User;
 
 import java.util.Map;
 
 public
 interface RedisRepository {
-    Map <String, Student > findAll();
-    Student findById(String id);
-    void save(Student student);
+    Map <String, User > findAll();
+    User findById(String id);
+    void save(User user);
     void delete(String id);
 }

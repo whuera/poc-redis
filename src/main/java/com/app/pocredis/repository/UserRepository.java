@@ -1,6 +1,6 @@
 package com.app.pocredis.repository;
 
-import com.app.pocredis.dto.Student;
+import com.app.pocredis.dto.User;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -10,13 +10,14 @@ import java.util.Map;
 import java.util.UUID;
 
 @Repository
-public class StudentRepository implements RedisRepository {
-    private static final String KEY = "Student";
+public class UserRepository implements RedisRepository {
+    private static final String KEY = "User";
 
-    private RedisTemplate<String, Student > redisTemplate;
+    private RedisTemplate<String, User > redisTemplate;
     private HashOperations hashOperations;
 
-    public StudentRepository(RedisTemplate<String, Student> redisTemplate) {
+    public
+    UserRepository (RedisTemplate<String, User > redisTemplate) {
         this.redisTemplate = redisTemplate;
     }
 
@@ -26,18 +27,19 @@ public class StudentRepository implements RedisRepository {
     }
 
     @Override
-    public Map<String, Student> findAll() {
+    public Map<String, User > findAll() {
         return hashOperations.entries(KEY);
     }
 
     @Override
-    public Student findById(String id) {
-        return (Student) hashOperations.get(KEY, id);
+    public
+    User findById(String id) {
+        return (User) hashOperations.get( KEY, id);
     }
 
     @Override
-    public void save(Student student) {
-        hashOperations.put(KEY, UUID.randomUUID().toString(), student);
+    public void save(User user) {
+        hashOperations.put( KEY, UUID.randomUUID().toString(), user );
     }
 
     @Override

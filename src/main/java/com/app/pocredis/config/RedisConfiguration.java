@@ -1,6 +1,6 @@
 package com.app.pocredis.config;
 
-import com.app.pocredis.dto.Student;
+import com.app.pocredis.dto.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -14,8 +14,8 @@ public class RedisConfiguration {
     }
 
     @Bean
-    RedisTemplate<String, Student > redisTemplate() {
-        final RedisTemplate<String, Student> redisTemplate = new RedisTemplate<>();
+    RedisTemplate<String, User > redisTemplate() {
+        final RedisTemplate<String, User > redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(jedisConnectionFactory());
         return redisTemplate;
     }
